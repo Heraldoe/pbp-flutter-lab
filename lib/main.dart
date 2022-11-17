@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:counter_7/form.dart';
+import 'package:counter_7/budgetshow.dart';
+import 'package:counter_7/budgetmodel.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -13,18 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Counter'),
     );
   }
 }
@@ -83,6 +78,40 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text("Counter Program"),
       ),
+        drawer: Drawer(
+          child: Column(
+            children: [
+              // Adding clickable menu
+              ListTile(
+                title: const Text('counter_7'),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Counter')),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('Add Budget Info'),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyFormPage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('Budget Data'),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyShowPage(title: 'Show data')),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.

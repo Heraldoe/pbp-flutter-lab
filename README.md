@@ -1,4 +1,35 @@
-# counter_7
+# Assignment 8
+
+Halomoan Geraldo - 21067208865
+
+## Explain the difference between Navigator.push and Navigator.pushReplacement.
+The Navigator.push will push a new page to the navigator stack without popping anything from the stack. On the other hand, the Navigator.pushReplacement will replace the top of the stack in the navigator stack by first popping, the stack and pushing the new page.
+
+## List all the widgets you used in this project and explain their functions.
+- Stateless widget : Used for the root of the application.
+- Stateful widget : Used to make widgets with changing states.
+- Scaffold : Used to contain other widgets.
+- Container : Also used to contain other widgets
+- Drawer : Widget used to contain ListTiles when clicked.
+- ListTile : The widget used as buttons to redirect between pages of the app.
+- Form : Used to retrieve the inputted data from the user.
+- Navigator : Used to navigate between pages of the application.
+- TextFormField :  A field that retrieves the text inputted by the user.
+
+## Name the types of events that exist in Flutter (example: onPressed).
+- onPressed : When a widget that can be clicked on is clicked, triggers an event.
+- onTap : Similar to onPressed, but usually for a widget that are usually not clickable.
+- onChanged : Triggers an event when the content of the widget is changed. Usually used for text fields and other similar widgets.
+- onSaved : Triggers an event when a widget is saved.
+
+## Explain how the Navigator works in "switching" pages of a Flutter application.
+The Navigator in Flutter uses a stack to switch between pages of the application. The top of the stack will be the current page that will be shown to the user. We can use functions such as Navigator.push and Navigator.pushReplacement to push routes to the page to change between pages. If the pop function is called, the next top of the stack route will then be shown to the user.
+
+## Explain how you implemented the checking list above.
+First, I created a new form.dart file and created the input fields so that the user can input data. Then, I made the budgetmodel.dart file to make the BudgetModel class which contains Strings that will be shown later. After this, I made the budgetshow.dart file to show the BudgetModels that the user inputted in a container and using the ListView class to list each BudgetModel from the user. Finally, I added the drawer to each of the file except the model file and added the routes to each of the file to make the drawer functional. For the routing between pages, I used the Navigator.pushReplacement so that the top of the stack will just be replaced by the new route. 
+
+
+# counter_7 (Assignment 7)
 
 Halomoan Geraldo - 2106720885
 
