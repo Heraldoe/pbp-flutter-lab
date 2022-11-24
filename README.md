@@ -1,3 +1,21 @@
+# Assignment 9
+
+Halomoan Geraldo -2106720885
+
+## Can we retrieve JSON data without creating a model first? If yes, is it better than creating a model before retrieving JSON data?
+Yes, it is possible to retrieve JSON data without having to create a model. However, it would be better to create the model first, as it would let us see and control the data that we would be getting from the JSON.
+
+## List the widgets that you used in this project and explain their functions.
+- FutureBuilder: Used to build its widget from the Future.
+- Future: Used to fetch data asynchronously
+
+## Explain the mechanism of retrieving data from json so it can be shown in Flutter.
+The URI of the data that is going to be fetched is stored into a variable and then the variable will then be decoded to a JSON string. This JSON string will then be converted into JSON data which will have objects that can be displayed.
+
+## Explain how you implemented the checklist above.
+First, I made new files each to handle the model and showing the detail of each data. In the models file, I used the quicktype website to get the models and the JSON to model converter. From here, I used Future and FutureBuilder widget to get the data from my Heroku web application to get the JSON data in the form of string. With the JSON to model converter, 
+the new class will then be used to display the data in both the detailwatchlist.dart and watchlist.dart.
+
 # Assignment 8
 
 Halomoan Geraldo - 21067208865

@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:counter_7/budgetmodel.dart';
 import 'package:counter_7/form.dart';
 import 'package:counter_7/main.dart';
+import 'dart:convert';
+import 'package:counter_7/watchlist.dart';
+import 'dart:developer';
+import 'package:counter_7/detailwatchlist.dart';
+import 'package:counter_7/watchlistmodels.dart';
 
 void main() {
   runApp(const MyApp());
@@ -64,9 +69,19 @@ class _MyShowPage extends State<MyShowPage> {
                 onTap: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => const MyShowPage(title: 'Show data',)),
+                    MaterialPageRoute(builder: (context) => const MyShowPage(title: 'Show data')),
                   );
                 },
+              ),
+              ListTile(
+            title: const Text('Watch List'),
+            onTap: () {
+              // Routing the menu to the form page
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const MyWatchlistPage()),
+              );
+            },
               ),
             ],
           ),

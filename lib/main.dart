@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:counter_7/form.dart';
 import 'package:counter_7/budgetshow.dart';
 import 'package:counter_7/budgetmodel.dart';
+import 'dart:convert';
+import 'package:counter_7/watchlist.dart';
+import 'dart:developer';
+import 'package:counter_7/detailwatchlist.dart';
+import 'package:counter_7/watchlistmodels.dart';
 
 
 void main() {
@@ -108,6 +113,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialPageRoute(builder: (context) => const MyShowPage(title: 'Show data')),
                   );
                 },
+              ),
+              ListTile(
+            title: const Text('Watch List'),
+            onTap: () {
+              // Routing the menu to the form page
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const MyWatchlistPage()),
+              );
+            },
               ),
             ],
           ),

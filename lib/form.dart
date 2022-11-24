@@ -2,6 +2,11 @@ import 'package:counter_7/main.dart';
 import 'package:flutter/material.dart';
 import 'package:counter_7/budgetshow.dart';
 import 'package:counter_7/budgetmodel.dart';
+import 'dart:convert';
+import 'package:counter_7/watchlist.dart';
+import 'dart:developer';
+import 'package:counter_7/detailwatchlist.dart';
+import 'package:counter_7/watchlistmodels.dart';
 
 class MyFormPage extends StatefulWidget {
   const MyFormPage({super.key});
@@ -23,39 +28,49 @@ class _MyFormPageState extends State<MyFormPage> {
         title: Text('Form'),
       ),
       drawer: Drawer(
-        child: Column(
-          children: [
-            // Adding clickable menu
-            ListTile(
-              title: const Text('counter_7'),
-              onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Counter')),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Add Budget Info'),
-              onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyFormPage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Budget Data'),
-              onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyShowPage(title: 'Show data',)),
-                );
-              },
-            ),
-          ],
+          child: Column(
+            children: [
+              // Adding clickable menu
+              ListTile(
+                title: const Text('counter_7'),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyHomePage(title: 'Counter')),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('Add Budget Info'),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyFormPage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('Budget Data'),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyShowPage(title: 'Show data')),
+                  );
+                },
+              ),
+              ListTile(
+            title: const Text('Watch List'),
+            onTap: () {
+              // Routing the menu to the form page
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const MyWatchlistPage()),
+              );
+            },
+              ),
+            ],
+          ),
         ),
-      ),
       body: Form(
         key: _formKey,
         child: SingleChildScrollView(
